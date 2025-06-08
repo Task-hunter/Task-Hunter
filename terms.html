@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Terms and Conditions</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header.navbar {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .section h1 {
+      color: #0077cc;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    .section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Task Hunter</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav class="nav-links" id="nav-links">
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="prices.html">Prices</a>
+    <a href="about.html">About Me</a>
+    <a href="contacten.html">Contact</a>
+    <a href="faqen.html">FAQ</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h1>Terms and Conditions</h1>
+    <p>These terms govern your use of the Task Hunter services. By using this website or submitting a task, you agree to these terms in full.</p>
+    <h2>1. Scope of Services</h2>
+    <p>Task Hunter provides digital concierge services. We handle online research, booking assistance, reminders, and other digital tasks as requested by users.</p>
+    <h2>2. Fair Use</h2>
+    <p>Services are meant for personal or professional use, not for illegal, harmful or abusive purposes. Repeated abusive use may result in termination of access to our services.</p>
+    <h2>3. Payments</h2>
+    <p>Services are prepaid via online methods such as Revolut or bank transfer. Once a task is confirmed, fees are non-refundable unless agreed otherwise.</p>
+    <h2>4. Confidentiality</h2>
+    <p>We respect your privacy. All data and task details are kept confidential and are not shared with third parties without consent, except when legally required.</p>
+    <h2>5. Limitations of Liability</h2>
+    <p>Task Hunter does not guarantee the accuracy of third-party data (such as booking availability or pricing). We are not liable for indirect damages caused by use of external services.</p>
+    <h2>6. Modifications</h2>
+    <p>We reserve the right to update these terms. Continued use of the service after changes implies acceptance of the updated terms.</p>
+    <h2>7. Contact</h2>
+    <p>If you have any questions about these terms, email us at <a href="mailto:taskhuter.digital@gmail.com">taskhuter.digital@gmail.com</a>.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("nav-links").classList.toggle("show");
+      });
+    });
+  </script>
+
+  <footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+    <a href="terms.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Terms & Conditions</a>
+    |
+    <a href="privacy.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+  </footer>
+</body>
+</html>

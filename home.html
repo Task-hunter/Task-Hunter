@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Home</title>
+  <style>
+  @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+
+    /* === RESPONSIVE MENU === */
+    .navbar {
+      background-color: #1f1f1f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center; 
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    .language-switch {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    .language-switch img {
+      display: inline-block;
+      height: 20px;
+      border-radius: 2px;
+    }
+
+    /* === PAGE CONTENT === */
+    .hero {
+      background-color: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      background-color: #0077cc;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background-color: #005fa3;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #0077cc;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .step, .service {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .step h3, .service li {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .step p {
+      margin: 0;
+    }
+
+    .service ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .header-logo {
+      height: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Responsive Menu -->
+  <header class="navbar">
+    <div class="logo">Task Hunter</div>
+    <div class="language-switch">
+    <a href="index.html" title="View in Romanian">
+      <img src="ro.png" alt="Română">
+    </a>
+  </div>
+
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav class="nav-links" id="nav-links">
+    <a  <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="prices.html">Prices</a>
+    <a href="about.html">About Me</a>
+    <a href="contacten.html">Contact</a>
+    <a href="faqen.html">FAQ</a>
+  </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
+    <h1>TASK HUNTER</h1>
+    <p>“You need it. I solve it.”</p>
+    <a href="contacten.html" class="cta-button">Request a service</a>
+  </div>
+
+  <!-- How it works -->
+  <div class="section">
+    <h2>🧩 How it works</h2>
+
+    <div class="step">
+      <h3>1. Tell me what you need</h3>
+      <p>Send a message with your task details – simple, complex, spontaneous or scheduled.</p>
+    </div>
+
+    <div class="step">
+      <h3>2. I’ll handle everything</h3>
+      <p>I search, check, organize, compare or buy – you just wait for the result.</p>
+    </div>
+
+    <div class="step">
+      <h3>3. You get the result fast</h3>
+      <p>Whether it's a link, a list, a reservation or a reminder — you’ll get it ready to use.</p>
+    </div>
+  </div>
+
+  <!-- Popular Services -->
+  <div class="section">
+    <h2>⭐ Popular Services</h2>
+    <div class="service">
+      <ul>
+        <li>Finding the cheapest flight or hotel</li>
+        <li>Creating reminders / emails / messages for birthdays</li>
+        <li>Checking offers / online discounts</li>
+        <li>Finding the perfect gift for an occasion</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JS pentru meniul responsive -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("nav-links").classList.toggle("show");
+      });
+    });
+  </script>
+<footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+  <a href="terms.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Terms & Conditions</a>
+  |
+  <a href="privacy.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+</footer>
+
+</body>
+</html>

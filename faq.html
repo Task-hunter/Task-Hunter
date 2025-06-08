@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – FAQ</title>
+  <style>
+  @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .faq-item {
+      margin-bottom: 30px;
+    }
+    .faq-item h3 {
+      font-size: 18px;
+      color: #0077cc;
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      font-size: 16px;
+      margin: 0;
+    }
+    @media (max-width: 600px) {
+      .page-title {
+        font-size: 22px;
+      }
+    }
+    .navbar {
+      background-color: #1f1f1f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+      .nav-links a {
+        padding: 10px 20px;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+    }
+    .language-switch {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+    .language-switch img {
+      display: inline-block;
+      height: 20px;
+      border-radius: 2px;
+    }
+    .header-logo {
+      height: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">Task Hunter</div>
+  <div class="language-switch">
+    <a href="faqen" title="View in English">
+      <img src="gb.png" alt="English" style="height: 20px; vertical-align: middle;">
+    </a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <nav class="nav-links" id="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="preturi.html">Prețuri</a>
+      <a href="despre.html">Despre mine</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+  </nav>
+</header>
+
+<header>
+  <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
+  <div class="page-title">Întrebări frecvente</div>
+  <p>Tot ce ai vrut să știi despre Task Hunter</p>
+</header>
+
+<div class="section">
+  <div class="faq-item"><h3>1. Ce este Task Hunter?</h3><p>Este un serviciu de concierge digital – un asistent personal online care te ajută cu diverse taskuri zilnice, rapide și repetitive.</p></div>
+  <div class="faq-item"><h3>2. Cum trimit un task?</h3><p>Poți folosi formularul de pe pagina „Contact” sau trimite direct prin email sau WhatsApp.</p></div>
+  <div class="faq-item"><h3>3. Cât durează până primesc un răspuns?</h3><p>De obicei, taskurile sunt preluate în câteva ore. Cele trimise în afara orelor de program sunt procesate începând cu ziua următoare.</p></div>
+  <div class="faq-item"><h3>4. Ce fel de taskuri pot trimite?</h3><p>Orice task digital care poate fi realizat online: căutări, rezervări, emailuri, memento-uri, organizare etc.</p></div>
+  <div class="faq-item"><h3>5. Pot solicita un task în weekend?</h3><p>Da, taskurile se pot trimite oricând. Totuși, în weekend rezolvarea lor poate depinde de disponibilitatea serviciilor externe.</p></div>
+  <div class="faq-item"><h3>6. Ce înseamnă „răspuns prioritar” în pachetul Premium?</h3><p>Taskurile tale vor fi tratate cu prioritate și vei primi răspunsuri mai rapide decât în pachetele standard.</p></div>
+  <div class="faq-item"><h3>7. Cum plătesc pentru un task?</h3><p>Plata se face online, prin Revolut, transfer bancar sau altă metodă convenabilă agreată împreună.</p></div>
+  <div class="faq-item"><h3>8. Ce se întâmplă dacă am mai mult de 10 taskuri pe lună?</h3><p>Poți face upgrade la pachetul Concierge Premium sau solicita taskuri extra contra cost.</p></div>
+  <div class="faq-item"><h3>9. Sunt datele mele în siguranță?</h3><p>Da. Discreția și confidențialitatea sunt esențiale în acest serviciu. Nimic nu este partajat cu terți.</p></div>
+  <div class="faq-item"><h3>10. Pot anula un task după ce l-am trimis?</h3><p>Da, dacă taskul nu a fost încă început. Trimite rapid un mesaj cu mențiunea „Anulare”.</p></div>
+</div>
+
+<footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+  <a href="termeni.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Termeni și Condiții</a>
+  |
+  <a href="confidentialitate.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Politica de Confidențialitate</a>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    document.getElementById("nav-links").classList.toggle("show");
+  });
+});
+</script>
+</body>
+</html>

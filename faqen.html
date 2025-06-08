@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – FAQ</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-item {
+      margin-bottom: 30px;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      color: #0077cc;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .page-title {
+        font-size: 22px;
+      }
+    }
+
+    .navbar {
+      background-color: #1f1f1f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    .language-switch {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    .language-switch img {
+      display: inline-block;
+      height: 20px;
+      border-radius: 2px;
+    }
+
+    .header-logo {
+      height: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">Task Hunter</div>
+  <div class="language-switch">
+    <a href="faq.html" title="View in Romanian">
+      <img src="ro.png" alt="Română">
+    </a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <nav class="nav-links" id="nav-links">
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="prices.html">Prices</a>
+    <a href="about.html">About Me</a>
+    <a href="contacten.html">Contact</a>
+    <a href="faqen.html">FAQ</a>
+  </nav>
+</header>
+
+<header>
+  <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
+  <div class="page-title">Frequently Asked Questions</div>
+  <p>Everything you wanted to know about Task Hunter</p>
+</header>
+
+<div class="section">
+  <div class="faq-item"><h3>1. What is Task Hunter?</h3><p>It’s a digital concierge service – a personal online assistant that helps you with quick, repetitive daily tasks.</p></div>
+  <div class="faq-item"><h3>2. How do I submit a task?</h3><p>You can use the form on the “Contact” page or send it directly via email or WhatsApp.</p></div>
+  <div class="faq-item"><h3>3. How long does it take to get a response?</h3><p>Tasks are usually processed within a few hours. Tasks sent outside working hours are handled starting the next day.</p></div>
+  <div class="faq-item"><h3>4. What kind of tasks can I send?</h3><p>Any digital task that can be done online: searches, bookings, emails, reminders, organization, etc.</p></div>
+  <div class="faq-item"><h3>5. Can I send a task on the weekend?</h3><p>Yes, tasks can be sent anytime. However, resolution during the weekend may depend on the availability of external services.</p></div>
+  <div class="faq-item"><h3>6. What does “priority response” mean in the Premium plan?</h3><p>Your tasks will be prioritized and you’ll get faster replies compared to standard plans.</p></div>
+  <div class="faq-item"><h3>7. How do I pay for a task?</h3><p>Payments are made online, via Revolut, bank transfer or any other mutually agreed method.</p></div>
+  <div class="faq-item"><h3>8. What if I exceed 10 tasks per month?</h3><p>You can upgrade to the Concierge Premium plan or request extra tasks for an additional fee.</p></div>
+  <div class="faq-item"><h3>9. Is my data safe?</h3><p>Yes. Discretion and confidentiality are essential to this service. Nothing is shared with third parties.</p></div>
+  <div class="faq-item"><h3>10. Can I cancel a task after I’ve submitted it?</h3><p>Yes, if the task hasn’t started yet. Just send a quick message with the note “Cancel”.</p></div>
+</div>
+
+<footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+  <a href="terms.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Terms & Conditions</a>
+  |
+  <a href="privacy.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("nav-links").classList.toggle("show");
+    });
+  });
+</script>
+</body>
+</html>

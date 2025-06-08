@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Contact</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .section h2 {
+      font-size: 22px;
+      color: #0077cc;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea, select {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+    }
+
+    .cta-button {
+      background-color: #0077cc;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: fit-content;
+    }
+
+    .cta-button:hover {
+      background-color: #005fa3;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+    }
+
+    .contact-info p {
+      margin: 6px 0;
+    }
+
+    .secondary {
+      background-color: #eef6fb;
+      border-left: 4px solid #0077cc;
+    }
+
+    .navbar {
+      background-color: #1f1f1f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    .language-switch {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    .language-switch img {
+      display: inline-block;
+      height: 20px;
+      border-radius: 2px;
+    }
+
+    .header-logo {
+      height: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">Task Hunter</div>
+  <div class="language-switch">
+    <a href="contacten.html" title="View in English">
+      <img src="gb.png" alt="English">
+    </a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <nav class="nav-links" id="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="preturi.html">Prețuri</a>
+      <a href="despre.html">Despre mine</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+  </nav>
+</header>
+
+<header>
+  <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
+  <div class="page-title">Contact</div>
+  <p>Trimite un task sau întreabă orice — răspund rapid!</p>
+</header>
+
+<div class="section">
+  <h2>📬 Trimite un task</h2>
+  <form id="taskForm" method="POST" action="https://formspree.io/f/xpwrpakp">
+    <input type="hidden" name="_subject" value="TASK: Nou task primit">
+    <input type="text" id="nume" name="nume" placeholder="Numele tău" required>
+    <input type="text" id="contact" name="contact" placeholder="Adresa ta de email sau numărul de telefon" required>
+    <textarea id="mesaj" name="mesaj" rows="5" placeholder="Descrie taskul..." required></textarea>
+    <button type="submit" class="cta-button" id="sendEmail">Trimite un task pe mail</button>
+    <button type="button" class="cta-button" id="sendWhatsapp" style="background-color: #25d366;">Trimite un task prin WhatsApp</button>
+  </form>
+
+  <div class="contact-info">
+    <h2>📞 Alte metode de contact</h2>
+    <p>Email: <a href="mailto:taskhuter.digital@gmail.com">taskhuter.digital@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/40748650942">+40 748 650 942</a></p>
+    <p><strong>Program:</strong> Luni–Duminică, 10:00–19:00</p>
+    <p style="font-style: italic; color: #666;">
+      Taskurile trimise în afara orelor de program vor fi procesate începând cu ziua următoare.<br>
+      În weekend (sâmbătă și duminică), taskurile vor fi preluate, însă rezolvarea lor poate depinde de disponibilitatea serviciilor implicate (ex: instituții închise, call center-uri indisponibile etc.).
+    </p>
+  </div>
+</div>
+
+<div class="section secondary">
+  <h2>❓ Alte cereri sau nelămuriri</h2>
+  <p>Completează formularul de mai jos pentru întrebări generale, plângeri sau solicitări de refund.</p>
+  <form action="https://formspree.io/f/xvgrkpdr" method="post">
+    <input type="hidden" name="_subject" value="Contact: Refund sau nelămurire">
+    <input type="text" name="nume" placeholder="Numele tău" required>
+    <input type="email" name="email" placeholder="Emailul tău" required>
+    <select name="tip-cerere" required>
+      <option value="">Selectează tipul cererii</option>
+      <option value="plangere">Plângere</option>
+      <option value="refund">Cerere de refund</option>
+      <option value="intrebare">Întrebare despre serviciu</option>
+      <option value="alta">Alt tip de cerere</option>
+    </select>
+    <textarea name="detalii" rows="5" placeholder="Scrie detaliile cererii tale..." required></textarea>
+    <button type="submit" class="cta-button">Trimite cererea</button>
+  </form>
+</div>
+
+<footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+  <a href="termeni.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Termeni și Condiții</a>
+  |
+  <a href="confidentialitate.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Politica de Confidențialitate</a>
+</footer>
+
+<script>
+function isEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function isPhone(value) {
+  return /^[0-9+\s]{10,}$/.test(value);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    document.getElementById("nav-links").classList.toggle("show");
+  });
+
+  document.getElementById("taskForm").addEventListener("submit", function (e) {
+    const contact = document.getElementById("contact").value.trim();
+    if (!isEmail(contact)) {
+      alert("Te rugăm să introduci o adresă de email validă pentru trimiterea pe mail.");
+      e.preventDefault();
+    }
+  });
+
+  document.getElementById("sendWhatsapp").addEventListener("click", function () {
+    const contact = document.getElementById("contact").value.trim();
+    const nume = document.getElementById("nume").value.trim();
+    const mesaj = document.getElementById("mesaj").value.trim();
+
+    if (!isPhone(contact)) {
+      alert("Te rugăm să introduci un număr de telefon valid pentru trimiterea prin WhatsApp.");
+      return;
+    }
+
+    const link = `https://wa.me/40748650942?text=Salut! Sunt ${encodeURIComponent(nume)}.%0A%0ATask: ${encodeURIComponent(mesaj)}`;
+    window.open(link, "_blank");
+  });
+});
+</script>
+</body>
+</html>
