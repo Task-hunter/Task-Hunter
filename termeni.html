@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Termeni și Condiții</title>
+  <style>
+  @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header.navbar {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .section h1 {
+      color: #0077cc;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    .section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Task Hunter</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="preturi.html">Prețuri</a>
+      <a href="despre.html">Despre mine</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h1>Termeni și Condiții</h1>
+
+    <p>Prin accesarea și utilizarea site-ului „Task Hunter”, ești de acord cu termenii și condițiile descrise mai jos. Dacă nu ești de acord cu acești termeni, te rugăm să nu utilizezi acest site.</p>
+
+    <h2>1. Descrierea serviciului</h2>
+    <p>Task Hunter oferă servicii de tip concierge digital – adică asistență personală online pentru sarcini administrative, de organizare și informare.</p>
+
+    <h2>2. Utilizarea corectă a serviciului</h2>
+    <p>Este interzisă folosirea serviciilor pentru activități ilegale, abuzive sau care încalcă drepturile altor persoane.</p>
+
+    <h2>3. Confidențialitate</h2>
+    <p>Taskurile trimise de tine sunt tratate confidențial. Datele tale nu vor fi distribuite terților fără acordul tău explicit. Vezi Politica de Confidențialitate pentru detalii suplimentare.</p>
+
+    <h2>4. Limitări de răspundere</h2>
+    <p>Task Hunter nu este responsabil pentru acuratețea informațiilor oferite de terți sau pentru eventuale pierderi cauzate de utilizarea acestora. Utilizarea serviciilor se face pe propria răspundere.</p>
+
+    <h2>5. Prețuri și plăți</h2>
+    <p>Prețurile serviciilor sunt afișate pe site și pot fi ajustate în funcție de complexitate. Orice modificare de preț va fi comunicată înainte de prestarea serviciului.</p>
+
+    <h2>6. Modificări</h2>
+    <p>Ne rezervăm dreptul de a modifica termenii și condițiile oricând, fără notificare prealabilă. Versiunea actualizată va fi publicată pe această pagină.</p>
+
+    <h2>7. Contact</h2>
+    <p>Pentru orice întrebări legate de acești termeni, ne poți contacta la adresa <a href="mailto:taskhuter.digital@gmail.com">taskhuter.digital@gmail.com</a>.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("nav-links").classList.toggle("show");
+      });
+    });
+  </script>
+
+  <footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+    <a href="termeni.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Termeni și Condiții</a>
+    |
+    <a href="confidentialitate.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Politica de Confidențialitate</a>
+  </footer>
+</body>
+</html>

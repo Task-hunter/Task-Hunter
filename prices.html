@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Prices</title>
+  <style>
+   @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .navbar {
+      background-color: #1f1f1f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+      .nav-links a {
+        padding: 10px 20px;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+    }
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section h2 {
+      font-size: 24px;
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+    .pricing-table {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .package {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid #0077cc;
+    }
+    .package h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #0077cc;
+    }
+    .package p {
+      font-size: 16px;
+      margin: 5px 0 0;
+    }
+    .note {
+      margin-top: 30px;
+      font-style: italic;
+      color: #666;
+      font-size: 15px;
+    }
+    .language-switch {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+    .language-switch img {
+      display: inline-block;
+      height: 20px;
+      border-radius: 2px;
+    }
+    .header-logo {
+      height: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">Task Hunter</div>
+  <div class="language-switch">
+    <a href="preturi.html" title="View in Romanian">
+      <img src="ro.png" alt="Română">
+    </a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <nav class="nav-links" id="nav-links">
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="prices.html">Prices</a>
+    <a href="about.html">About Me</a>
+    <a href="contacten.html">Contact</a>
+    <a href="faqen.html">FAQ</a>
+  </nav>
+</header>
+
+<header>
+  <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
+  <div class="page-title">Prices</div>
+  <p>You pay only for what you need. No complications.</p>
+</header>
+
+<div class="section">
+  <h2>📦 Available Packages</h2>
+  <div class="pricing-table">
+    <div class="package">
+      <h3>“Quick Task” – 5€ / task</h3>
+      <p>For one-time, quick tasks. Pay only when you need something.</p>
+    </div>
+    <div class="package">
+      <h3>“Task Hunter” – 20€ / month</h3>
+      <p>Up to 10 tasks/month. Great for light but regular use.</p>
+    </div>
+    <div class="package">
+      <h3>“Concierge Premium” – 50€ / month</h3>
+      <p>Unlimited tasks + priority support. Perfect for busy people or teams.</p>
+    </div>
+  </div>
+  <p class="note">*Prices may vary depending on complexity.</p>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("nav-links").classList.toggle("show");
+    });
+  });
+</script>
+<footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+  <a href="terms.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Terms & Conditions</a>
+  |
+  <a href="privacy.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+</footer>
+</body>
+</html>

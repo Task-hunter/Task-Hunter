@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Politica de Confidențialitate</title>
+  <style>
+  @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header.navbar {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .section h1 {
+      color: #0077cc;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    .section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Task Hunter</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="preturi.html">Prețuri</a>
+      <a href="despre.html">Despre mine</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h1>Politica de Confidențialitate</h1>
+
+    <p>Protecția datelor tale personale este importantă pentru noi. Această politică explică modul în care colectăm, folosim și protejăm informațiile pe care ni le oferi prin utilizarea serviciilor Task Hunter.</p>
+
+    <h2>1. Ce date colectăm</h2>
+    <p>Colectăm doar informațiile pe care ni le oferi voluntar prin formularele de contact, e-mail sau WhatsApp, cum ar fi: nume, adresă de e-mail, număr de telefon și conținutul taskului trimis.</p>
+
+    <h2>2. Scopul colectării</h2>
+    <p>Datele sunt folosite exclusiv pentru a răspunde solicitărilor tale și a presta serviciile cerute. Nu trimitem mesaje nesolicitate și nu folosim datele în scopuri comerciale fără acordul tău.</p>
+
+    <h2>3. Stocarea și protecția datelor</h2>
+    <p>Datele tale sunt stocate în siguranță și nu sunt transmise terților. Aplicăm măsuri tehnice și organizatorice pentru a proteja confidențialitatea informațiilor.</p>
+
+    <h2>4. Drepturile tale</h2>
+    <p>Ai dreptul să soliciți accesul la datele tale, rectificarea, ștergerea sau restricționarea prelucrării acestora. Poți oricând să ne contactezi pentru a-ți exercita aceste drepturi.</p>
+
+    <h2>5. Perioada de păstrare</h2>
+    <p>Datele sunt păstrate doar atât timp cât este necesar pentru prestarea serviciilor sau conform obligațiilor legale.</p>
+
+    <h2>6. Contact</h2>
+    <p>Pentru întrebări sau solicitări legate de confidențialitate, scrie-ne la <a href="mailto:taskhuter.digital@gmail.com">taskhuter.digital@gmail.com</a>.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("nav-links").classList.toggle("show");
+      });
+    });
+  </script>
+<footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+  <a href="termeni.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Termeni și Condiții</a>
+  |
+  <a href="confidentialitate.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Politica de Confidențialitate</a>
+</footer>
+</body>
+</html>

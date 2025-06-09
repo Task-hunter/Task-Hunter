@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Prețuri</title>
+  <style>
+     @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+
+    .pricing-table {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .package {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid #0077cc;
+    }
+
+    .package h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #0077cc;
+    }
+
+    .package p {
+      font-size: 16px;
+      margin: 5px 0 0;
+    }
+
+    .note {
+      margin-top: 30px;
+      font-style: italic;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .navbar {
+      background-color: #1f1f1f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    .language-switch {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    .language-switch img {
+      display: inline-block;
+      height: 20px;
+      border-radius: 2px;
+    }
+
+    .header-logo {
+      height: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">Task Hunter</div>
+  <div class="language-switch">
+    <a href="prices.html" title="View in English">
+      <img src="gb.png" alt="English" style="height: 20px; vertical-align: middle;">
+    </a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <nav class="nav-links" id="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="preturi.html">Prețuri</a>
+      <a href="despre.html">Despre mine</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+  </nav>
+</header>
+
+<header>
+  <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
+  <div class="page-title">Prețuri</div>
+  <p>Plătești doar pentru ce ai nevoie. Fără complicații.</p>
+</header>
+
+<div class="section">
+  <h2>📦 Pachete disponibile</h2>
+
+  <div class="pricing-table">
+    <div class="package">
+      <h3>„Task Rapid” – 5€ / task</h3>
+      <p>Pentru taskuri unice și rapide. Plătești doar când ai nevoie.</p>
+    </div>
+
+    <div class="package">
+      <h3>„Task Hunter” – 20€ / lună</h3>
+      <p>Până la 10 taskuri/lună. Ideal pentru utilizare regulată, dar limitată.</p>
+    </div>
+
+    <div class="package">
+      <h3>„Concierge Premium” – 50€ / lună</h3>
+      <p>Taskuri nelimitate + răspuns prioritar. Perfect pentru persoane ocupate sau echipe.</p>
+    </div>
+  </div>
+
+  <p class="note">*Prețurile pot varia în funcție de complexitate.*</p>
+</div>
+
+<footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+  <a href="termeni.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Termeni și Condiții</a>
+  |
+  <a href="confidentialitate.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Politica de Confidențialitate</a>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("nav-links").classList.toggle("show");
+    });
+  });
+</script>
+</body>
+</html>

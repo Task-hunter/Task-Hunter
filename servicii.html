@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Servicii Oferite</title>
+  <style>
+   @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #1f1f1f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    .language-switch {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    .language-switch img {
+      display: inline-block;
+      height: 20px;
+      border-radius: 2px;
+    }
+
+    header.main-header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .header-logo {
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+
+    .category {
+      margin-bottom: 40px;
+    }
+
+    .category h3 {
+      color: #444;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .category ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .category li {
+      background: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Task Hunter</div>
+    <div class="language-switch">
+      <a href="services.html" title="View in English">
+        <img src="gb.png" alt="English" style="height: 20px; vertical-align: middle;">
+      </a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="preturi.html">Prețuri</a>
+      <a href="despre.html">Despre mine</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <header class="main-header">
+    <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
+    <div class="page-title">Servicii oferite</div>
+    <p>Ai un task? Aleg categoria și eu îl rezolv pentru tine.</p>
+  </header>
+
+  <div class="section">
+    <h2>📌 Categorii de servicii</h2>
+
+    <div class="category">
+      <h3>🧠 Cercetare online / Informații rapide</h3>
+      <ul>
+        <li>Compararea prețurilor pentru un produs</li>
+        <li>Căutarea unui tutorial sau ghid pas cu pas</li>
+        <li>Verificarea recenziilor și recomandărilor</li>
+        <li>Găsirea unui specialist (medic, avocat, instalator etc.)</li>
+        <li>Orice alt task de documentare rapidă</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h3>✈️ Asistență rezervări (transport, cazare, restaurante)</h3>
+      <ul>
+        <li>Găsirea și rezervarea celui mai convenabil zbor</li>
+        <li>Propuneri de cazări pe Booking / Airbnb</li>
+        <li>Rezervare la restaurant</li>
+        <li>Bilete la cinema, teatru, festivaluri</li>
+        <li>Planificare trasee (cu hărți, durate, opțiuni alternative)</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h3>📅 Organizare personală / memento / emailuri / calendare</h3>
+      <ul>
+        <li>Crearea și trimiterea de remindere automate</li>
+        <li>Redactare sau trimitere emailuri programate</li>
+        <li>Planificarea săptămânală în Google Calendar</li>
+        <li>Listă de sarcini zilnice personalizată</li>
+        <li>Gestionarea programărilor personale</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h3>🛒 Diverse (custom tasks, cumpărături online etc.)</h3>
+      <ul>
+        <li>Găsirea și comandarea unui cadou potrivit</li>
+        <li>Comandă de mâncare sau produse</li>
+        <li>Găsire de soluții creative pentru probleme specifice</li>
+        <li>Organizarea unui eveniment mic (zi de naștere, ieșire etc.)</li>
+        <li>Orice task digital pe care nu ai timp să-l faci tu</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+    <a href="termeni.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Termeni și Condiții</a>
+    |
+    <a href="confidentialitate.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Politica de Confidențialitate</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("nav-links").classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>

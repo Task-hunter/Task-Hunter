@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Hunter – Privacy Policy</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header.navbar {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links a {
+        padding: 10px 20px;
+      }
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .section h1 {
+      color: #0077cc;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+    .section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Task Hunter</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav class="nav-links" id="nav-links">
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="prices.html">Prices</a>
+    <a href="about.html">About Me</a>
+    <a href="contacten.html">Contact</a>
+    <a href="faqen.html">FAQ</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h1>Privacy Policy</h1>
+
+    <p>This privacy policy describes how Task Hunter collects, uses, and protects your personal data when using our services or submitting tasks through this site.</p>
+
+    <h2>1. What data we collect</h2>
+    <p>We collect personal data you voluntarily provide when submitting a task: name, email, phone number, and task details. No sensitive data is required unless necessary for the task and with your prior consent.</p>
+
+    <h2>2. Purpose of data collection</h2>
+    <p>Your data is used exclusively to deliver requested services, communicate with you about tasks, send confirmations, and manage your requests efficiently.</p>
+
+    <h2>3. Data security</h2>
+    <p>We take appropriate measures to protect your information from unauthorized access or disclosure. We never sell or share your data with third parties without your explicit consent, unless legally required.</p>
+
+    <h2>4. Data storage duration</h2>
+    <p>Your data is stored for as long as needed to provide the services. You may request deletion of your data at any time by contacting us.</p>
+
+    <h2>5. User rights</h2>
+    <p>You have the right to request access, correction, or deletion of your personal data. To exercise these rights, send an email to <a href="mailto:taskhuter.digital@gmail.com">taskhuter.digital@gmail.com</a>.</p>
+
+    <h2>6. Cookies</h2>
+    <p>This website does not use cookies or tracking systems. If this changes, we will update this policy accordingly.</p>
+
+    <h2>7. Changes to this policy</h2>
+    <p>We may update this privacy policy. Continued use of the service after changes implies acceptance of the updated policy.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("menu-toggle").addEventListener("click", function () {
+        document.getElementById("nav-links").classList.toggle("show");
+      });
+    });
+  </script>
+<footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
+  <a href="terms.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Terms & Conditions</a>
+  |
+  <a href="privacy.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+</footer>
+</body>
+</html>
