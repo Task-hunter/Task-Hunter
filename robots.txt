@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://task-hunter.github.io/Task-Hunter/sitemap.xml
