@@ -3,11 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Standard Favicon for older browsers -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Modern Browsers Favicon -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- iOS and PWA Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Task Hunter">
+  
+  <!-- SEO + Social Media title and description -->
   <title>FAQ – Task Hunter</title>
-<meta name="description" content="Quick answers to common questions about Task Hunter services.">
-<meta property="og:title" content="FAQ – Task Hunter">
-<meta property="og:description" content="Everything you need to know about this service.">
-<meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+  <meta name="description" content="Quick answers to common questions about Task Hunter services.">
+  <meta name="geo.region" content="RO">
+  <meta name="geo.placename" content="Romania">
+  <meta name="language" content="en">
+  <meta name="country" content="RO">
+  <meta property="og:title" content="FAQ – Task Hunter">
+  <meta property="og:description" content="Everything you need to know about this service.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
 
   <style>
     @font-face {
@@ -37,7 +55,12 @@
       padding: 40px 20px;
       text-align: center;
     }
-
+	.page-header {
+	  background-color: #1f1f1f;
+	  color: white;
+	  padding: 40px 20px;
+	  text-align: center;
+	}
     .page-title {
       font-size: 28px;
       font-weight: 700;
@@ -158,6 +181,8 @@
   </style>
 </head>
 <body>
+
+ <!-- ✅ Main navbar with logo, menu, and language switch -->
 <header class="navbar">
   <div class="logo">Task Hunter</div>
   <div class="language-switch">
@@ -165,22 +190,23 @@
       <img src="ro.png" alt="Română">
     </a>
   </div>
-  <button class="menu-toggle" id="menu-toggle">☰</button>
-  <nav class="nav-links" id="nav-links">
+  <button class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main navigation">
     <a href="home.html">Home</a>
     <a href="services.html">Services</a>
     <a href="prices.html">Prices</a>
     <a href="about.html">About Me</a>
     <a href="contacten.html">Contact</a>
     <a href="faqen.html">FAQ</a>
+	<a href="faqsearchen.html">Common Questions</a>
   </nav>
 </header>
 
-<header>
+<section class="page-header">
   <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
   <div class="page-title">Frequently Asked Questions</div>
   <p>Everything you wanted to know about Task Hunter</p>
-</header>
+</section>
 
 <div class="section">
   <div class="faq-item"><h3>1. What is Task Hunter?</h3><p>It’s a digital concierge service – a personal online assistant that helps you with quick, repetitive daily tasks.</p></div>
@@ -203,9 +229,14 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("menu-toggle").addEventListener("click", function () {
-      document.getElementById("nav-links").classList.toggle("show");
-    });
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
+  const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+  toggle.setAttribute("aria-expanded", !expanded);
+});
   });
 </script>
 </body>

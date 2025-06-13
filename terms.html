@@ -3,11 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Standard Favicon for older browsers -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Modern Browsers Favicon -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- iOS and PWA Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Task Hunter">
+  
+  <!-- SEO + Social Media title and description -->
   <title>Terms and Conditions – Task Hunter</title>
-<meta name="description" content="Read the terms and conditions for using Task Hunter. Clear, fair, and transparent.">
-<meta property="og:title" content="Terms and Conditions – Task Hunter">
-<meta property="og:description" content="What you need to know before using Task Hunter.">
-<meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+  <meta name="description" content="Read the terms and conditions for using Task Hunter. Clear, fair, and transparent.">
+  <meta name="geo.region" content="RO">
+  <meta name="geo.placename" content="Romania">
+  <meta name="language" content="en">
+  <meta name="country" content="RO">
+  <meta property="og:title" content="Terms and Conditions – Task Hunter">
+  <meta property="og:description" content="What you need to know before using Task Hunter.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
 
   <style>
     @font-face {
@@ -122,20 +140,38 @@
       line-height: 1.6;
       margin-bottom: 15px;
     }
+	.language-switch {
+	  margin-left: auto;
+	  margin-right: 10px;
+	}
+
+	.language-switch img {
+	  display: inline-block;
+	  height: 20px;
+	  border-radius: 2px;
+	}
   </style>
 </head>
 <body>
 
+ <!-- ✅ Main navbar with logo, menu, and language switch -->
   <header class="navbar">
     <div class="logo">Task Hunter</div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-    <nav class="nav-links" id="nav-links">
+	<div class="language-switch">
+	  <a href="termeni.html" title="View in Romanian">
+		<img src="ro.png" alt="Română">
+	  </a>
+	</div>
+
+  <button class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main navigation">
     <a href="home.html">Home</a>
     <a href="services.html">Services</a>
     <a href="prices.html">Prices</a>
     <a href="about.html">About Me</a>
     <a href="contacten.html">Contact</a>
     <a href="faqen.html">FAQ</a>
+	<a href="faqsearchen.html">Common Questions</a>
     </nav>
   </header>
 
@@ -159,10 +195,15 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("menu-toggle").addEventListener("click", function () {
-        document.getElementById("nav-links").classList.toggle("show");
-      });
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
+  const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+  toggle.setAttribute("aria-expanded", !expanded);
+});
     });
   </script>
 

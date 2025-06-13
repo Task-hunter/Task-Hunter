@@ -3,9 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Standard Favicon for older browsers -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Modern Browsers Favicon -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- iOS and PWA Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Task Hunter">
+  
+  <!-- SEO + Social Media title and description -->
   <title>Task Hunter – Home</title>
-  <style>
-  @font-face {
+  <meta name="description" content="Welcome to Task Hunter – your personal digital concierge for tasks, research, and online solutions. Let’s make life simpler.">
+  <meta name="geo.region" content="RO">
+  <meta name="geo.placename" content="Romania">
+  <meta name="language" content="en">
+  <meta name="country" content="RO">
+  <meta property="og:title" content="Home | Task Hunter">
+  <meta property="og:description" content="Discover Task Hunter – your digital assistant for research, task management, and online support.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+  
+  <!-- CSS Styles and Fonts -->
+   <style>
+   @font-face {
       font-family: 'Poppins';
       src: url('fonts/Poppins-Regular.ttf') format('truetype');
       font-weight: 400;
@@ -18,15 +42,12 @@
       font-weight: 600;
       font-style: normal;
     }
-
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
       background-color: #f4f4f4;
       color: #333;
-
-    /* === RESPONSIVE MENU === */
+    }
     .navbar {
       background-color: #1f1f1f;
       color: white;
@@ -38,32 +59,26 @@
       top: 0;
       z-index: 1000;
     }
-
     .logo {
       font-weight: 600;
       font-size: 20px;
     }
-
     .nav-links {
       display: flex;
       gap: 20px;
       justify-content: center; 
     }
-
     .nav-links.show {
       display: flex;
     }
-
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: 500;
     }
-
     .nav-links a:hover {
       color: #00bfff;
     }
-
     .menu-toggle {
       display: none;
       font-size: 24px;
@@ -72,12 +87,10 @@
       color: white;
       cursor: pointer;
     }
-
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
       }
-
       .nav-links {
         display: none;
         flex-direction: column;
@@ -88,45 +101,36 @@
         width: 100%;
         padding: 15px 0;
       }
-
       .nav-links a {
         padding: 10px 20px;
       }
-
       .nav-links.show {
         display: flex;
       }
     }
-
     .language-switch {
       margin-left: auto;
       margin-right: 10px;
     }
-
     .language-switch img {
       display: inline-block;
       height: 20px;
       border-radius: 2px;
     }
-
-    /* === PAGE CONTENT === */
     .hero {
       background-color: #1f1f1f;
       color: white;
       text-align: center;
       padding: 60px 20px;
     }
-
     .hero h1 {
       font-size: 32px;
       margin-bottom: 10px;
     }
-
     .hero p {
       font-style: italic;
       margin-bottom: 20px;
     }
-
     .cta-button {
       background-color: #0077cc;
       color: white;
@@ -137,23 +141,19 @@
       cursor: pointer;
       text-decoration: none;
     }
-
     .cta-button:hover {
       background-color: #005fa3;
     }
-
     .section {
       padding: 40px 20px;
       max-width: 800px;
       margin: auto;
     }
-
     .section h2 {
       color: #0077cc;
       font-size: 22px;
       margin-bottom: 20px;
     }
-
     .step, .service {
       background: white;
       border-radius: 8px;
@@ -161,22 +161,22 @@
       margin-bottom: 15px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-
     .step h3, .service li {
       margin: 0 0 10px;
       font-size: 17px;
     }
-
     .step p {
       margin: 0;
     }
-
     .service ul {
       padding-left: 20px;
       margin: 0;
     }
-
-    .header-logo {
+    .section .icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+    .hero img, .header-logo {
       height: 100px;
       margin-bottom: 20px;
     }
@@ -184,23 +184,23 @@
 </head>
 <body>
 
-  <!-- Responsive Menu -->
+ <!-- ✅ Main navbar with logo, menu, and language switch -->
   <header class="navbar">
-    <div class="logo">Task Hunter</div>
-    <div class="language-switch">
+  <div class="logo">Task Hunter</div>
+  <div class="language-switch">
     <a href="index.html" title="View in Romanian">
-      <img src="ro.png" alt="Română">
+      <img src="ro.png" alt="Română" style="height: 20px; vertical-align: middle;">
     </a>
   </div>
-
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-    <nav class="nav-links" id="nav-links">
-    <a  <a href="home.html">Home</a>
+  <button class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+    <a href="home.html">Home</a>
     <a href="services.html">Services</a>
     <a href="prices.html">Prices</a>
     <a href="about.html">About Me</a>
     <a href="contacten.html">Contact</a>
     <a href="faqen.html">FAQ</a>
+	<a href="faqsearchen.html">Common Questions</a>
   </nav>
   </header>
 
@@ -247,12 +247,17 @@
 
   <!-- JS pentru meniul responsive -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("menu-toggle").addEventListener("click", function () {
-        document.getElementById("nav-links").classList.toggle("show");
-      });
-    });
-  </script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
+  const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+  toggle.setAttribute("aria-expanded", !expanded);
+});
+  });
+</script>
 <footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
   <a href="terms.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Terms & Conditions</a>
   |

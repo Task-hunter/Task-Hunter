@@ -3,12 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Task Hunter</title>
-<meta name="description" content="Trimite un task sau pune o întrebare. Răspund rapid pe email sau WhatsApp.">
-<meta property="og:title" content="Contact Task Hunter">
-<meta property="og:description" content="Trimite cererea ta în doar câteva clicuri.">
-<meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+  
+    <!-- Favicon standard pentru browsere mai vechi -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Favicon pentru browsere moderne -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Favicon pentru iOS și aplicații web progressive -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Task Hunter">
+
+  <!-- Titlu și meta descriere SEO + Social Media -->
+  <title>Contact – Task Hunter</title>
+  <meta name="description" content="Trimite un task sau pune o întrebare. Răspund rapid pe email sau WhatsApp.">
+  <meta name="geo.region" content="RO">
+  <meta name="geo.placename" content="România">
+  <meta name="language" content="ro">
+  <meta name="country" content="RO">
+  <meta property="og:title" content="Contact Task Hunter">
+  <meta property="og:description" content="Trimite cererea ta în doar câteva clicuri.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+
+  <!-- Titlu și meta descriere SEO + Social Media -->
   <style>
     @font-face {
       font-family: 'Poppins';
@@ -37,7 +56,12 @@
       padding: 40px 20px;
       text-align: center;
     }
-
+	.page-header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+	}
     .page-title {
       font-size: 28px;
       font-weight: 700;
@@ -191,6 +215,8 @@
   </style>
 </head>
 <body>
+
+  <!-- ✅ Navbar principal cu logo, meniu și schimbare limbă -->
 <header class="navbar">
   <div class="logo">Task Hunter</div>
   <div class="language-switch">
@@ -198,22 +224,23 @@
       <img src="gb.png" alt="English">
     </a>
   </div>
-  <button class="menu-toggle" id="menu-toggle">☰</button>
-  <nav class="nav-links" id="nav-links">
-      <a href="index.html">Acasă</a>
-      <a href="servicii.html">Servicii</a>
-      <a href="preturi.html">Prețuri</a>
-      <a href="despre.html">Despre mine</a>
-      <a href="contact.html">Contact</a>
-      <a href="faq.html">FAQ</a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="index.html">Acasă</a>
+        <a href="servicii.html">Servicii</a>
+        <a href="preturi.html">Prețuri</a>
+        <a href="despre.html">Despre mine</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+		<a href="faqsearch.html">Căutări frecvente</a>
   </nav>
 </header>
 
-<header>
+<section class="page-header">
   <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
   <div class="page-title">Contact</div>
   <p>Trimite un task sau întreabă orice — răspund rapid!</p>
-</header>
+</section>
 
 <div class="section">
   <h2>📬 Trimite un task</h2>
@@ -272,10 +299,15 @@ function isPhone(value) {
   return /^[0-9+\s]{10,}$/.test(value);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("menu-toggle").addEventListener("click", function () {
-    document.getElementById("nav-links").classList.toggle("show");
-  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
+  const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+  toggle.setAttribute("aria-expanded", !expanded);
+});
 
   document.getElementById("taskForm").addEventListener("submit", function (e) {
     const contact = document.getElementById("contact").value.trim();

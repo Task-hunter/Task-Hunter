@@ -3,12 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <!-- Favicon standard pentru browsere mai vechi -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Favicon pentru browsere moderne -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Favicon pentru iOS și aplicații web progressive -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Task Hunter">
+
+  <!-- Titlu și meta descriere SEO + Social Media -->
   <meta name="google-site-verification" content="8BfAQopq2E0tG03kcSC4xeS0b2aWL-8OaS3Lma5P6ck" />
-<title>Task Hunter – Asistent digital personal pentru sarcini online</title>
-<meta name="description" content="Task Hunter te ajută cu sarcini online simple sau complicate – căutări, programări, formulare și altele. Rapid și confidențial.">
-<meta property="og:title" content="Task Hunter – Asistentul tău digital personal">
-<meta property="og:description" content="Trimiți task-ul, eu îl rezolv. Simplu. Online. Rapid.">
-<meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+  <title>Task Hunter – Asistent digital personal pentru sarcini online</title>
+  <meta name="description" content="Task Hunter te ajută cu sarcini online simple sau complicate – căutări, programări, formulare și altele. Rapid și confidențial.">
+  <meta name="geo.region" content="RO">
+  <meta name="geo.placename" content="România">
+  <meta name="language" content="ro">
+  <meta name="country" content="RO">
+  <meta property="og:title" content="Task Hunter – Asistentul tău digital personal">
+  <meta property="og:description" content="Trimiți task-ul, eu îl rezolv. Simplu. Online. Rapid.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+  
+  <!-- Stiluri CSS și fonturi -->
   <style>
    @font-face {
       font-family: 'Poppins';
@@ -104,6 +124,12 @@
       text-align: center;
       padding: 60px 20px;
     }
+	.page-header {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+	}
     .hero h1 {
       font-size: 32px;
       margin-bottom: 10px;
@@ -164,6 +190,8 @@
   </style>
 </head>
 <body>
+
+  <!-- ✅ Navbar principal cu logo, meniu și schimbare limbă -->
   <header class="navbar">
     <div class="logo">Task Hunter</div>
     <div class="language-switch">
@@ -171,16 +199,18 @@
         <img src="gb.png" alt="English" style="height: 20px; vertical-align: middle;">
       </a>
     </div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">Acasă</a>
-      <a href="servicii.html">Servicii</a>
-      <a href="preturi.html">Prețuri</a>
-      <a href="despre.html">Despre mine</a>
-      <a href="contact.html">Contact</a>
-      <a href="faq.html">FAQ</a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="index.html">Acasă</a>
+        <a href="servicii.html">Servicii</a>
+        <a href="preturi.html">Prețuri</a>
+        <a href="despre.html">Despre mine</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+		<a href="faqsearch.html">Căutări frecvente</a>
     </nav>
   </header>
+  
   <div class="hero">
     <img src="logo.png" alt="Task Hunter Logo" class="header-logo">
     <h1>TASK HUNTER</h1>
@@ -219,10 +249,15 @@
     <a href="confidentialitate.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Politica de Confidențialitate</a>
   </footer>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("menu-toggle").addEventListener("click", function () {
-        document.getElementById("nav-links").classList.toggle("show");
-      });
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
+  const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+  toggle.setAttribute("aria-expanded", !expanded);
+});
     });
   </script>
 </body>

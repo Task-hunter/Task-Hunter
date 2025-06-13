@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon standard pentru browsere mai vechi -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Favicon pentru browsere moderne -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Favicon pentru iOS și aplicații web progressive -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Task Hunter">
+
+  <!-- Titlu și meta descriere SEO + Social Media -->
+  <title>Căutări frecvente – Task Hunter</title>
+  <meta name="description" content="Răspunsuri rapide la întrebări uzuale despre serviciile Task Hunter și asistență digitală personală.">
+  <meta name="geo.region" content="RO">
+  <meta name="geo.placename" content="România">
+  <meta name="language" content="ro">
+  <meta name="country" content="RO">
+  <meta property="og:title" content="Căutări frecvente – Task Hunter">
+  <meta property="og:description" content="Răspunsuri rapide la întrebări uzuale despre serviciile Task Hunter și asistență digitală personală.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+
+  <!-- Stiluri CSS și fonturi -->
+  <style>
+  /* Fonturi personalizate */
+  @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+  @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+  /* Stiluri generale */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  /* Navigație principală (Navbar) */
+  .navbar {
+    background-color: #1f1f1f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .language-switch {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .language-switch img {
+    display: inline-block;
+    height: 20px;
+    border-radius: 2px;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: #00bfff;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #1f1f1f;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 15px 0;
+    }
+    .nav-links a {
+      padding: 10px 20px;
+    }
+    .nav-links.show {
+      display: flex;
+    }
+  }
+
+  /* Header principal */
+  header {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  /* Header secțiune de titlu */
+  .page-header {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .page-header .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .page-header p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .page-header .page-title {
+      font-size: 22px;
+    }
+  }
+
+  /* Secțiune conținut principal */
+  .section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  details {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fafafa;
+  }
+
+  summary {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .faq-item {
+    margin: 15px 0;
+  }
+
+  .faq-item h3 {
+    font-size: 18px;
+    color: #0077cc;
+    margin-bottom: 5px;
+  }
+
+  .faq-item p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  /* Footer site */
+  footer {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  footer a {
+    color: #00bfff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Navbar principal cu logo, meniu și schimbare limbă -->
+  <header class="navbar">
+    <div class="logo">Task Hunter</div>
+    <div class="language-switch">
+      <a href="faqsearchen.html" title="View in English">
+        <img src="gb.png" alt="English" style="height: 20px; vertical-align: middle;">
+      </a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="index.html">Acasă</a>
+        <a href="servicii.html">Servicii</a>
+        <a href="preturi.html">Prețuri</a>
+        <a href="despre.html">Despre mine</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+		<a href="faqsearch.html">Căutări frecvente</a>
+    </nav>
+  </header>
+
+  <!-- ✅ Header de pagină (titlu și subtitlu) -->
+  <section class="page-header">
+    <div class="page-title">Căutări frecvente</div>
+    <p>Întrebări și răspunsuri utile despre serviciile Task Hunter și cum te pot ajuta în viața digitală de zi cu zi.</p>
+  </section>
+  
+  <!-- ✅ Conținut principal al paginii (secțiuni întrebări FAQ) -->
+  <div class="section">
+  
+    <!-- 🔽 Aici vor fi inserate categoriile cu <details> și întrebările -->
+<!-- 🎁 Căutări de cadouri și oferte -->
+<details>
+  <summary>🎁 Căutări de cadouri și oferte</summary>
+  <div class="faq-item"><h3>1. Cine mă poate ajuta să caut un cadou potrivit?</h3><p>Task Hunter îți oferă sugestii personalizate și poate comanda cadoul pentru tine.</p></div>
+  <div class="faq-item"><h3>2. Cum aleg un cadou când nu am idei?</h3><p>Noi analizăm profilul persoanei și îți propunem opțiuni potrivite.</p></div>
+  <div class="faq-item"><h3>3. Ce cadou pot cumpăra pentru o persoană pretențioasă?</h3><p>Îți oferim idei elegante și sigure, adaptate bugetului și preferințelor.</p></div>
+  <div class="faq-item"><h3>4. Nu am timp să caut oferte. Cine poate face asta pentru mine?</h3><p>Task Hunter caută, compară și îți trimite cele mai bune oferte disponibile.</p></div>
+  <div class="faq-item"><h3>5. Există un serviciu care compară prețuri în locul meu?</h3><p>Da – ne ocupăm de research și îți oferim variantele cele mai bune.</p></div>
+  <div class="faq-item"><h3>6. Vreau un cadou personalizat, dar nu știu de unde să încep.</h3><p>Spune-ne câteva detalii și ne ocupăm noi de tot procesul.</p></div>
+  <div class="faq-item"><h3>7. Unde găsesc cele mai bune oferte online fără să pierd ore întregi?</h3><p>Task Hunter face selecția pentru tine și îți trimite cele mai relevante opțiuni.</p></div>
+  <div class="faq-item"><h3>8. Există cineva care poate alege și comanda cadoul pentru mine?</h3><p>Da – ne ocupăm integral: sugestii, comandă și confirmare.</p></div>
+  <div class="faq-item"><h3>9. Ce cadou să aleg pentru un coleg de birou?</h3><p>Îți sugerăm idei profesionale și prietenoase, potrivite contextului.</p></div>
+  <div class="faq-item"><h3>10. Care sunt cele mai apreciate cadouri de Crăciun?</h3><p>Facem o listă actualizată anual cu sugestii de sezon.</p></div>
+  <div class="faq-item"><h3>11. Ce pot oferi cuiva care are deja „totul”?</h3><p>Propunem experiențe, personalizări sau donații în numele lor.</p></div>
+  <div class="faq-item"><h3>12. Cum aleg un cadou de ultim moment?</h3><p>Identificăm opțiuni cu livrare rapidă și disponibile local.</p></div>
+  <div class="faq-item"><h3>13. Ce cadou să ofer partenerului/partenerei mele?</h3><p>Îți propunem idei romantice, surprinzătoare și semnificative.</p></div>
+  <div class="faq-item"><h3>14. Se poate ocupa cineva de ambalarea cadoului?</h3><p>Colaborăm cu furnizori care oferă opțiuni de ambalare premium.</p></div>
+  <div class="faq-item"><h3>15. Cum aleg un cadou potrivit pentru copii?</h3><p>Ținem cont de vârstă, interese și siguranță, și propunem variante adaptate.</p></div>
+  <div class="faq-item"><h3>16. Ce cadou pot trimite prin curier fără bătăi de cap?</h3><p>Ne ocupăm noi de selecție, comandă și livrare cu urmărire.</p></div>
+  <div class="faq-item"><h3>17. Există un buget minim recomandat pentru un cadou decent?</h3><p>Îți oferim variante frumoase chiar și cu bugete mici.</p></div>
+  <div class="faq-item"><h3>18. Ce cadou să aleg pentru o aniversare importantă?</h3><p>Găsim opțiuni memorabile și semnificative pentru ocazii speciale.</p></div>
+  <div class="faq-item"><h3>19. Unde pot găsi cadouri handmade autentice?</h3><p>Colaborăm cu creatori locali și îți prezentăm selecții atent alese.</p></div>
+  <div class="faq-item"><h3>20. Pot trimite un cadou anonim?</h3><p>Da – ne asigurăm că identitatea ta rămâne confidențială, la cerere.</p></div>
+</details>
+
+<!-- ⏱️ Managementul timpului -->
+<details>
+  <summary>⏱️ Managementul timpului</summary>
+  <div class="faq-item"><h3>1. Cum pot economisi timp cu sarcinile zilnice online?</h3><p>Task Hunter preia taskurile repetitive ca să te poți concentra pe ce contează.</p></div>
+  <div class="faq-item"><h3>2. Cine mă poate ajuta cu munca digitală plictisitoare?</h3><p>Asistentul digital Task Hunter poate face toate sarcinile consumatoare de timp.</p></div>
+  <div class="faq-item"><h3>3. Vreau să scap de taskurile repetitive. Ce opțiuni am?</h3><p>Trimite taskurile tale către Task Hunter și noi le rezolvăm eficient și rapid.</p></div>
+  <div class="faq-item"><h3>4. Nu mai fac față la e-mailuri și programări. Există o soluție?</h3><p>Delegă-le către noi – le triem, răspundem sau facem programările în locul tău.</p></div>
+  <div class="faq-item"><h3>5. Pot delega lucruri simple ca reminder-ele și căutările online?</h3><p>Da, orice task digital de acest gen poate fi preluat de Task Hunter.</p></div>
+  <div class="faq-item"><h3>6. Cum îmi organizez mai bine ziua fără să pierd ore pe Google?</h3><p>Noi căutăm și filtrăm informația pentru tine și îți oferim doar esențialul.</p></div>
+  <div class="faq-item"><h3>7. Cine mă poate ajuta cu research rapid?</h3><p>Trimite subiectul și primești un rezumat clar, documentat și bine structurat.</p></div>
+  <div class="faq-item"><h3>8. Am prea multe pe cap. Ce servicii mă pot ajuta să scap de haos?</h3><p>Concierge digital personalizat, care te degrevează de taskuri zilnice.</p></div>
+  <div class="faq-item"><h3>9. Cum economisesc timp cu organizarea vacanței?</h3><p>Task Hunter poate căuta oferte, cazări, transport și crea itinerarii.</p></div>
+  <div class="faq-item"><h3>10. Vreau să nu mai pierd timp pe e-mailuri. Ce fac?</h3><p>Le triem, redactăm răspunsuri standard și prioritizăm pentru tine.</p></div>
+  <div class="faq-item"><h3>11. Cum îmi eficientizez taskurile repetitive de birou?</h3><p>Le centralizăm, automatizăm unde e posibil și le preluăm în mod recurent.</p></div>
+  <div class="faq-item"><h3>12. Pot primi memento-uri și organizare zilnică?</h3><p>Da, setăm memento-uri și organizăm agenda zilnică în funcție de priorități.</p></div>
+  <div class="faq-item"><h3>13. Cum pot delega taskuri fără să explic de fiecare dată?</h3><p>După onboarding, păstrăm șabloane pentru taskurile recurente.</p></div>
+  <div class="faq-item"><h3>14. Pot delega taskuri de organizare personală?</h3><p>Da, te putem ajuta cu liste de cumpărături, plăți recurente, agendă, etc.</p></div>
+  <div class="faq-item"><h3>15. Se poate să scap complet de partea logistică a unei activități?</h3><p>Da – ne ocupăm noi de toate detaliile, comunicările și confirmările.</p></div>
+  <div class="faq-item"><h3>16. Pot cere taskuri dimineața și să le primesc finalizate seara?</h3><p>Da – în majoritatea cazurilor, timpul de răspuns este sub 24h.</p></div>
+  <div class="faq-item"><h3>17. Cum pot planifica eficient o zi de lucru încărcată?</h3><p>Noi îți ordonăm taskurile în funcție de urgență și durată estimată.</p></div>
+  <div class="faq-item"><h3>18. Cine mă poate ajuta cu sarcini legate de organizarea familiei?</h3><p>Putem coordona programări, planificări, liste, și chiar activități pentru copii.</p></div>
+  <div class="faq-item"><h3>19. Pot externaliza complet anumite activități?</h3><p>Da – îți creăm un proces clar și preluăm integral acea activitate online.</p></div>
+  <div class="faq-item"><h3>20. Cum mă asigur că taskurile mele sunt preluate corect?</h3><p>Primești confirmare de preluare, status live și feedback constant.</p></div>
+</details>
+
+<!-- 📱 Digital personal assistant -->
+<details>
+  <summary>📱 Digital personal assistant</summary>
+  <div class="faq-item"><h3>1. Ce este un asistent digital personal?</h3><p>Un serviciu precum Task Hunter care îți rezolvă taskuri online în locul tău.</p></div>
+  <div class="faq-item"><h3>2. Pot să angajez pe cineva să-mi rezolve taskuri online?</h3><p>Da – cu Task Hunter ai acces la un om real care preia sarcinile tale digitale.</p></div>
+  <div class="faq-item"><h3>3. Cât costă un serviciu de tip concierge digital?</h3><p>Oferim mai multe pachete flexibile, începând de la câțiva euro/lună.</p></div>
+  <div class="faq-item"><h3>4. Există un om real care să-mi rezolve taskuri digitale?</h3><p>Da, la Task Hunter primești suport uman, nu doar AI sau automatizări.</p></div>
+  <div class="faq-item"><h3>5. Vreau un asistent virtual, dar care să fie uman. Se poate?</h3><p>Exact asta oferim – o persoană reală care comunică și lucrează pentru tine.</p></div>
+  <div class="faq-item"><h3>6. Cine poate face chestii în locul meu, dar online?</h3><p>Task Hunter preia taskuri precum research, emailuri, programări și altele.</p></div>
+  <div class="faq-item"><h3>7. Ce face un concierge digital?</h3><p>Se ocupă de sarcini personale sau de birou care pot fi făcute online.</p></div>
+  <div class="faq-item"><h3>8. Task Hunter e un chatbot?</h3><p>Nu – primești sprijin real, uman, printr-o relație personalizată.</p></div>
+  <div class="faq-item"><h3>9. Ce diferență e între un asistent virtual și Task Hunter?</h3><p>Task Hunter este un concierge digital real, nu un software automatizat.</p></div>
+  <div class="faq-item"><h3>10. Pot delega taskuri prin WhatsApp sau email?</h3><p>Absolut – avem canale rapide pentru trimiterea oricărui task digital.</p></div>
+  <div class="faq-item"><h3>11. Trebuie să fiu firmă ca să folosesc acest serviciu?</h3><p>Nu – serviciul e creat special pentru persoane fizice ocupate.</p></div>
+  <div class="faq-item"><h3>12. Pot avea același concierge digital în fiecare lună?</h3><p>Da – oferim continuitate și familiaritate în colaborare.</p></div>
+  <div class="faq-item"><h3>13. Este Task Hunter disponibil și în weekend?</h3><p>Taskurile pot fi trimise oricând – unele pot fi rezolvate și în weekend.</p></div>
+  <div class="faq-item"><h3>14. Cine îmi poate face remindere zilnice sau săptămânale?</h3><p>Noi setăm remindere recurente și ne asigurăm că le primești la timp.</p></div>
+  <div class="faq-item"><h3>15. Ce înseamnă concierge digital personalizat?</h3><p>Un om dedicat care învață stilul tău și îți preia sarcinile frecvente eficient.</p></div>
+  <div class="faq-item"><h3>16. Pot cere suport și în limba engleză?</h3><p>Da, oferim asistență bilingvă (română și engleză).</p></div>
+  <div class="faq-item"><h3>17. Pot avea taskuri recurente preluate automat?</h3><p>Da – setăm taskuri recurente și le preluăm fără alte cereri ulterioare.</p></div>
+  <div class="faq-item"><h3>18. Cât de repede primesc un răspuns la un task?</h3><p>De obicei în câteva ore – în funcție de complexitate și oră.</p></div>
+  <div class="faq-item"><h3>19. Cine îmi poate verifica zilnic inbox-ul?</h3><p>Noi putem filtra, sorta și răspunde după criteriile tale prestabilite.</p></div>
+  <div class="faq-item"><h3>20. Pot folosi serviciul și pentru rudele mele?</h3><p>Da – cu acordul tău, putem prelua și taskuri pentru membrii familiei.</p></div>
+</details>
+
+<!-- 👩‍💻 Taskuri diverse -->
+<details>
+  <summary>👩‍💻 Taskuri diverse</summary>
+  <div class="faq-item"><h3>1. Cine mă poate ajuta să trimit un e-mail important?</h3><p>Task Hunter redactează și trimite e-mailuri conform instrucțiunilor tale.</p></div>
+  <div class="faq-item"><h3>2. Pot plăti pe cineva să îmi organizeze agenda?</h3><p>Da – organizăm calendarul, programările și îți trimitem memento-uri.</p></div>
+  <div class="faq-item"><h3>3. Nu am timp de planificări. Există un serviciu care să se ocupe?</h3><p>Trimite-ne detaliile – ne ocupăm noi de planificare și optimizare.</p></div>
+  <div class="faq-item"><h3>4. Vreau să programez o vacanță, dar nu am chef de căutat.</h3><p>Task Hunter caută opțiuni, face rezervările și îți livrează itinerarul.</p></div>
+  <div class="faq-item"><h3>5. Există cineva care să-mi facă lista de cumpărături online?</h3><p>Spune ce ai nevoie și îți livrăm lista structurată sau comanda directă.</p></div>
+  <div class="faq-item"><h3>6. Am nevoie de ajutor cu planificarea unei ieșiri în oraș.</h3><p>Ne ocupăm de propuneri, rezervări și tot ce ține de logistică.</p></div>
+  <div class="faq-item"><h3>7. Cum îmi pot organiza eficient ziua fără bătăi de cap?</h3><p>Îți livrăm planuri zilnice sau săptămânale optimizate.</p></div>
+  <div class="faq-item"><h3>8. Pot delega taskuri administrative de birou?</h3><p>Da – redactăm, planificăm, monitorizăm și raportăm după nevoie.</p></div>
+  <div class="faq-item"><h3>9. Cine mă poate ajuta să trimit felicitări automate de sărbători?</h3><p>Programăm mesaje automate sau le trimitem manual pentru tine.</p></div>
+  <div class="faq-item"><h3>10. Pot delega urmărirea coletelor online?</h3><p>Ne ocupăm să urmărim comenzile tale și îți trimitem notificări.</p></div>
+  <div class="faq-item"><h3>11. Pot primi rapoarte săptămânale cu taskurile finalizate?</h3><p>Da – oferim opțiunea de raportare periodică personalizată.</p></div>
+  <div class="faq-item"><h3>12. Există cineva care poate trimite e-mailuri în numele meu?</h3><p>Cu acordul tău, redactăm și trimitem e-mailuri profesionale sau personale.</p></div>
+  <div class="faq-item"><h3>13. Pot solicita ajutor pentru întocmirea unor formulare?</h3><p>Da – completăm formulare online sau PDF după informațiile tale.</p></div>
+  <div class="faq-item"><h3>14. Ce pot face dacă am uitat să reînnoiesc un abonament?</h3><p>Noi îți trimitem memento-uri sau reînnoim în locul tău cu acordul tău.</p></div>
+  <div class="faq-item"><h3>15. Vreau să organizez un eveniment. Mă puteți ajuta?</h3><p>Ne ocupăm de căutări, rezervări, comunicare și programare.</p></div>
+  <div class="faq-item"><h3>16. Task Hunter poate face rezervări la restaurant?</h3><p>Da – căutăm opțiuni, facem rezervarea și îți trimitem confirmarea.</p></div>
+  <div class="faq-item"><h3>17. Pot cere să mi se reamintească facturile lunare?</h3><p>Setăm memento-uri și urmărim scadențele împreună cu tine.</p></div>
+  <div class="faq-item"><h3>18. Ce se întâmplă dacă greșesc un task?</h3><p>Trimite modificarea – îl refacem sau îl anulăm fără costuri suplimentare.</p></div>
+  <div class="faq-item"><h3>19. Pot cere taskuri de cercetare online?</h3><p>Da – căutăm, sintetizăm și livrăm informația relevantă pentru tine.</p></div>
+  <div class="faq-item"><h3>20. Pot cere ajutor pentru sarcini legate de hobby-uri?</h3><p>Desigur – te putem ajuta să găsești cursuri, activități sau echipamente.</p></div>
+</details>
+
+    <details>
+  <summary>📞 Asistență personală</summary>
+  <div class="faq-item"><h3>1. Pot externaliza sarcinile zilnice simple?</h3><p>Da – Task Hunter te ajută să economisești timp preluând taskurile tale repetitive.</p></div>
+  <div class="faq-item"><h3>2. Cine mă ajută să trimit mesaje sau să notez mementouri?</h3><p>Noi putem trimite mesaje pentru tine și programa mementouri personalizate.</p></div>
+  <div class="faq-item"><h3>3. Cine mă poate trezi, amâna, reaminti chestii importante?</h3><p>Trimitem alerte și mesaje automate pentru a-ți aminti ce contează, la timp.</p></div>
+  <div class="faq-item"><h3>4. E cineva care poate rezolva chestii pentru mine fără să sune nimeni?</h3><p>Sigur – comunicarea se face doar digital, fără apeluri telefonice.</p></div>
+  <div class="faq-item"><h3>5. Ce fac când nu am timp nici să caut ceva online?</h3><p>Ne trimiți o cerere scurtă și noi căutăm, comparăm și îți dăm varianta optimă.</p></div>
+  <div class="faq-item"><h3>6. Mă poate ajuta cineva să îmi organizez viața digitală?</h3><p>Task Hunter îți structurează agenda, notițele și listele pentru mai multă claritate.</p></div>
+  <div class="faq-item"><h3>7. Există un serviciu care să îmi țină evidența lucrurilor mărunte?</h3><p>Da – noi ne ocupăm de toate detaliile logistice, pentru ca tu să te concentrezi pe ce contează.</p></div>
+  <div class="faq-item"><h3>8. Cum pot să fiu mai organizat fără să folosesc zeci de aplicații?</h3><p>Noi centralizăm totul pentru tine – într-un singur canal de comunicare.</p></div>
+  <div class="faq-item"><h3>9. Ce tip de lucruri pot delega unui concierge digital?</h3><p>Orice task digital: mesaje, programări, căutări, mementouri, liste, organizare documente.</p></div>
+  <div class="faq-item"><h3>10. Poate cineva să îmi reamintească ce am de făcut?</h3><p>Da – trimiți lista ta de taskuri, iar noi ne ocupăm de notificări și urmărire.</p></div>
+  <div class="faq-item"><h3>11. Ce fac dacă uit mereu să plătesc facturile?</h3><p>Îți trimitem notificări automate la datele stabilite împreună.</p></div>
+  <div class="faq-item"><h3>12. Pot avea o agendă personală digitală gestionată de altcineva?</h3><p>Da – noi ne ocupăm de completare, actualizare și notificări.</p></div>
+  <div class="faq-item"><h3>13. Pot primi mementouri zilnice pentru sarcinile importante?</h3><p>Desigur – prin WhatsApp, email sau SMS, în funcție de preferințele tale.</p></div>
+  <div class="faq-item"><h3>14. Pot cere ajutor pentru taskuri recurente?</h3><p>Da – le putem automatiza sau programa recurent (ex: în fiecare luni la 9:00).</p></div>
+  <div class="faq-item"><h3>15. Mă poate ajuta cineva să țin minte ce e urgent?</h3><p>Noi putem marca taskurile urgente și trimite notificări speciale pentru ele.</p></div>
+  <div class="faq-item"><h3>16. Cum pot ține evidența mai multor sarcini deodată?</h3><p>Noi facem centralizarea și prioritizarea lor, apoi îți trimitem o listă clară.</p></div>
+  <div class="faq-item"><h3>17. E un serviciu potrivit și pentru persoane mai în vârstă?</h3><p>Da – Task Hunter este simplu de folosit, iar comunicarea e prietenoasă și clară.</p></div>
+  <div class="faq-item"><h3>18. Poate cineva să îmi noteze ideile când nu am timp?</h3><p>Trimite un mesaj vocal sau text – noi le transcriem și salvăm pentru tine.</p></div>
+  <div class="faq-item"><h3>19. Există suport și pentru organizare în familie?</h3><p>Desigur – putem coordona taskuri legate de copii, cumpărături, programări familiale.</p></div>
+  <div class="faq-item"><h3>20. Pot primi reminder pentru zile de naștere sau evenimente?</h3><p>Da – setăm notificări recurente pentru evenimente speciale.</p></div>
+</details>
+
+<details>
+  <summary>💼 Profesioniști ocupați + 🌍 Altele</summary>
+  <div class="faq-item"><h3>1. Sunt prea ocupat să-mi caut cazare. Poate face altcineva asta?</h3><p>Da – căutăm opțiuni în funcție de preferințele tale și îți livrăm doar variantele relevante.</p></div>
+  <div class="faq-item"><h3>2. Cum pot fi mai productiv fără să angajez o secretară?</h3><p>Externalizează taskurile digitale repetitive către un concierge digital, cum este Task Hunter.</p></div>
+  <div class="faq-item"><h3>3. Există un serviciu digital pentru oamenii ocupați?</h3><p>Da – exact acesta este scopul serviciului nostru: economie de timp pentru oameni ocupați.</p></div>
+  <div class="faq-item"><h3>4. Cei ocupați cum se descurcă cu toate taskurile de zi cu zi?</h3><p>Delegă digital către servicii specializate, cum este Task Hunter.</p></div>
+  <div class="faq-item"><h3>5. Cine mă ajută cu lucrurile mici, dar importante?</h3><p>Task Hunter preia taskurile mărunte care îți consumă timp și energie.</p></div>
+  <div class="faq-item"><h3>6. Există un serviciu care face lucruri în locul meu?</h3><p>Da – un concierge digital le preia și le rezolvă eficient pentru tine.</p></div>
+  <div class="faq-item"><h3>7. Vreau să trăiesc mai relaxat. Ce soluții există?</h3><p>Delegarea taskurilor simple către un serviciu digital este un prim pas valoros.</p></div>
+  <div class="faq-item"><h3>8. Nu am chef de nimic digital. Poate altcineva să se ocupe?</h3><p>Exact – noi gestionăm aspectele digitale pentru tine, fără stres sau bătăi de cap.</p></div>
+  <div class="faq-item"><h3>9. Pot angaja un om pentru taskuri online fără să am o firmă?</h3><p>Da – serviciul nostru este dedicat persoanelor fizice.</p></div>
+  <div class="faq-item"><h3>10. Cine îmi poate organiza viața digitală?</h3><p>Task Hunter oferă servicii de organizare, planificare și execuție digitală personalizată.</p></div>
+  <div class="faq-item"><h3>11. Ce pot face dacă uit mereu taskurile mici?</h3><p>Noi ți le reamintim, ți le programăm și urmărim progresul pentru tine.</p></div>
+  <div class="faq-item"><h3>12. Cum îmi reduc stresul zilnic?</h3><p>Eliminând taskurile inutile din agenda ta și delegându-le eficient.</p></div>
+  <div class="faq-item"><h3>13. Pot să am un partener digital de încredere?</h3><p>Da – printr-un abonament lunar, devii client fidel și primești suport continuu.</p></div>
+  <div class="faq-item"><h3>14. Cât timp pot salva lunar externalizând taskuri?</h3><p>Între 10 și 30 de ore lunar, în funcție de complexitate și frecvență.</p></div>
+  <div class="faq-item"><h3>15. Este un serviciu sigur?</h3><p>Da – datele tale sunt confidențiale și protejate conform politicii noastre.</p></div>
+  <div class="faq-item"><h3>16. Cine folosește cel mai des aceste servicii?</h3><p>Profesioniști ocupați, freelanceri, părinți și persoane care prețuiesc timpul.</p></div>
+  <div class="faq-item"><h3>17. Pot cere ajutor și pentru taskuri spontane?</h3><p>Da – trimite-ne cererea și ne ocupăm imediat ce primim detaliile necesare.</p></div>
+  <div class="faq-item"><h3>18. Ce fac dacă am nevoie urgentă de ajutor digital?</h3><p>Trimite „urgent” în mesaj și intervenim cât de repede posibil.</p></div>
+  <div class="faq-item"><h3>19. Acest serviciu e potrivit și pentru introvertiți?</h3><p>Perfect – comunicarea se face scris, fără apeluri sau întâlniri inutile.</p></div>
+  <div class="faq-item"><h3>20. Pot combina taskuri personale și profesionale?</h3><p>Desigur – tu ne trimiți lista, iar noi ne adaptăm nevoilor tale.</p></div>
+</details>
+  </div>
+  
+   <!-- ✅ Footer simplu cu linkuri utile -->
+  <footer>
+    <a href="termeni.html">Termeni și Condiții</a> |
+    <a href="confidentialitate.html">Politica de Confidențialitate</a>
+  </footer>
+
+  <!-- ✅ Script pentru meniul mobil -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
+  const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+  toggle.setAttribute("aria-expanded", !expanded);
+});
+  });
+  </script>
+</body>
+</html>

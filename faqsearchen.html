@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Standard Favicon for older browsers -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Modern Browsers Favicon -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- iOS and PWA Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Task Hunter">
+
+  <!-- SEO + Social Media title and description -->
+  <title>Common Questions – Task Hunter</title>
+  <meta name="description" content="Quick answers to common questions about Task Hunter services and digital personal assistance.">
+  <meta name="geo.region" content="RO">
+  <meta name="geo.placename" content="Romania">
+  <meta name="language" content="en">
+  <meta name="country" content="RO">
+  <meta property="og:title" content="Common Questions – Task Hunter">
+  <meta property="og:description" content="Quick answers to common questions about Task Hunter services and digital personal assistance.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+
+  <!-- CSS Styles and Fonts -->
+  <style>
+  @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+  @font-face {
+      font-family: 'Poppins';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  .navbar {
+    background-color: #1f1f1f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .language-switch {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .language-switch img {
+    display: inline-block;
+    height: 20px;
+    border-radius: 2px;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: #00bfff;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #1f1f1f;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 15px 0;
+    }
+    .nav-links a {
+      padding: 10px 20px;
+    }
+    .nav-links.show {
+      display: flex;
+    }
+  }
+
+  header {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .page-header {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .page-header .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .page-header p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .page-header .page-title {
+      font-size: 22px;
+    }
+  }
+
+  .section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  details {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fafafa;
+  }
+
+  summary {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .faq-item {
+    margin: 15px 0;
+  }
+
+  .faq-item h3 {
+    font-size: 18px;
+    color: #0077cc;
+    margin-bottom: 5px;
+  }
+
+  .faq-item p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  footer {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  footer a {
+    color: #00bfff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- ✅ Main navbar with logo, menu, and language switch -->
+  <header class="navbar">
+    <div class="logo">Task Hunter</div>
+    <div class="language-switch">
+      <a href="faqsearch.html" title="Vezi în română">
+        <img src="ro.png" alt="Română" style="height: 20px; vertical-align: middle;">
+      </a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="prices.html">Pricing</a>
+        <a href="about.html">About Me</a>
+        <a href="contacten.html">Contact</a>
+        <a href="faqen.html">FAQ</a>
+		<a href="faqsearchen.html">Common Questions</a>
+    </nav>
+  </header>
+
+  <!-- ✅ Page header (title and subtitle) -->
+  <section class="page-header">
+    <div class="page-title">Common Questions</div>
+    <p>Useful questions and answers about Task Hunter services and how they can assist you in your daily digital life.</p>
+  </section>
+  
+    <!-- ✅ Main content section (FAQ sections with <details>) -->
+  <div class="section">
+
+    <!-- 🎁 Gift and Deal Searches -->
+<details>
+  <summary>🎁 Gift and Deal Searches</summary>
+  <div class="faq-item"><h3>1. Who can help me find the right gift?</h3><p>Task Hunter offers personalized suggestions and can even order the gift for you.</p></div>
+  <div class="faq-item"><h3>2. How do I choose a gift when I have no ideas?</h3><p>We analyze the person's profile and suggest suitable options.</p></div>
+  <div class="faq-item"><h3>3. What gift can I buy for someone picky?</h3><p>We provide elegant and safe ideas, adapted to your budget and preferences.</p></div>
+  <div class="faq-item"><h3>4. I don't have time to look for deals. Who can do it for me?</h3><p>Task Hunter searches, compares, and sends you the best available deals.</p></div>
+  <div class="faq-item"><h3>5. Is there a service that compares prices for me?</h3><p>Yes – we handle the research and provide you with the best options.</p></div>
+  <div class="faq-item"><h3>6. I want a personalized gift but don’t know where to start.</h3><p>Tell us a few details, and we’ll handle the entire process.</p></div>
+  <div class="faq-item"><h3>7. Where can I find the best online deals without wasting hours?</h3><p>Task Hunter selects for you and sends the most relevant options.</p></div>
+  <div class="faq-item"><h3>8. Can someone choose and order the gift for me?</h3><p>Yes – we take care of everything: suggestions, order, and confirmation.</p></div>
+  <div class="faq-item"><h3>9. What gift should I choose for an office colleague?</h3><p>We suggest professional and friendly ideas suitable for the context.</p></div>
+  <div class="faq-item"><h3>10. What are the most appreciated Christmas gifts?</h3><p>We create an annually updated list of seasonal suggestions.</p></div>
+  <div class="faq-item"><h3>11. What can I offer to someone who already has "everything"?</h3><p>We suggest experiences, personalizations, or charitable donations in their name.</p></div>
+  <div class="faq-item"><h3>12. How do I pick a last-minute gift?</h3><p>We identify fast-shipping and locally available options.</p></div>
+  <div class="faq-item"><h3>13. What gift should I give my partner?</h3><p>We suggest romantic, surprising, and meaningful ideas.</p></div>
+  <div class="faq-item"><h3>14. Can someone handle the gift wrapping?</h3><p>We work with suppliers who offer premium wrapping options.</p></div>
+  <div class="faq-item"><h3>15. How do I choose a suitable gift for children?</h3><p>We consider age, interests, and safety to propose tailored options.</p></div>
+  <div class="faq-item"><h3>16. What gift can I send by courier hassle-free?</h3><p>We handle selection, ordering, and tracked delivery.</p></div>
+  <div class="faq-item"><h3>17. Is there a recommended minimum budget for a decent gift?</h3><p>We offer great options even for small budgets.</p></div>
+  <div class="faq-item"><h3>18. What gift should I choose for an important anniversary?</h3><p>We find memorable and meaningful options for special occasions.</p></div>
+  <div class="faq-item"><h3>19. Where can I find authentic handmade gifts?</h3><p>We collaborate with local creators and present carefully curated selections.</p></div>
+  <div class="faq-item"><h3>20. Can I send a gift anonymously?</h3><p>Yes – we ensure your identity remains confidential upon request.</p></div>
+</details>
+
+<!-- ⏱️ Time Management -->
+<details>
+  <summary>⏱️ Time Management</summary>
+  <div class="faq-item"><h3>1. How can I save time with daily online tasks?</h3><p>Task Hunter takes over repetitive tasks so you can focus on what matters.</p></div>
+  <div class="faq-item"><h3>2. Who can help me with boring digital work?</h3><p>The Task Hunter digital assistant can handle all time-consuming tasks.</p></div>
+  <div class="faq-item"><h3>3. I want to get rid of repetitive tasks. What are my options?</h3><p>Send your tasks to Task Hunter, and we’ll handle them efficiently and quickly.</p></div>
+  <div class="faq-item"><h3>4. I can't keep up with emails and appointments. Is there a solution?</h3><p>Delegate them to us – we sort, respond, or schedule them for you.</p></div>
+  <div class="faq-item"><h3>5. Can I delegate simple things like reminders and online searches?</h3><p>Yes, any such digital task can be handled by Task Hunter.</p></div>
+  <div class="faq-item"><h3>6. How do I better organize my day without wasting hours on Google?</h3><p>We search and filter information for you and provide only what matters.</p></div>
+  <div class="faq-item"><h3>7. Who can help me with quick research?</h3><p>Send the topic and receive a clear, well-documented summary.</p></div>
+  <div class="faq-item"><h3>8. I’m overwhelmed. What services can help me reduce the chaos?</h3><p>Personalized digital concierge that relieves you of daily tasks.</p></div>
+  <div class="faq-item"><h3>9. How can I save time planning my vacation?</h3><p>Task Hunter can search deals, accommodations, transport, and create itineraries.</p></div>
+  <div class="faq-item"><h3>10. I want to stop wasting time on emails. What can I do?</h3><p>We sort them, draft standard replies, and prioritize for you.</p></div>
+  <div class="faq-item"><h3>11. How do I streamline repetitive office tasks?</h3><p>We centralize them, automate where possible, and handle them regularly.</p></div>
+  <div class="faq-item"><h3>12. Can I get reminders and daily organization?</h3><p>Yes, we set reminders and organize your daily agenda based on priorities.</p></div>
+  <div class="faq-item"><h3>13. How can I delegate tasks without explaining each time?</h3><p>After onboarding, we keep templates for recurring tasks.</p></div>
+  <div class="faq-item"><h3>14. Can I delegate personal organization tasks?</h3><p>Yes, we can help with shopping lists, recurring payments, agenda, etc.</p></div>
+  <div class="faq-item"><h3>15. Can I completely avoid the logistics side of an activity?</h3><p>Yes – we take care of all details, communications, and confirmations.</p></div>
+  <div class="faq-item"><h3>16. Can I submit tasks in the morning and get them done by evening?</h3><p>Yes – in most cases, turnaround time is under 24h.</p></div>
+  <div class="faq-item"><h3>17. How can I effectively plan a busy workday?</h3><p>We sort your tasks by urgency and estimated time.</p></div>
+  <div class="faq-item"><h3>18. Who can help with family organization tasks?</h3><p>We can coordinate appointments, planning, lists, and even kids' activities.</p></div>
+  <div class="faq-item"><h3>19. Can I fully outsource certain activities?</h3><p>Yes – we create a clear process and take over that online task entirely.</p></div>
+  <div class="faq-item"><h3>20. How can I be sure my tasks are handled correctly?</h3><p>You receive confirmation of receipt, live status updates, and regular feedback.</p></div>
+</details>
+
+
+<!-- 📱 Digital personal assistant -->
+<details>
+  <summary>📱 Digital Personal Assistant</summary>
+  <div class="faq-item"><h3>1. What is a digital personal assistant?</h3><p>A service like Task Hunter that handles online tasks on your behalf.</p></div>
+  <div class="faq-item"><h3>2. Can I hire someone to handle my online tasks?</h3><p>Yes – with Task Hunter, you get a real person to take over your digital duties.</p></div>
+  <div class="faq-item"><h3>3. How much does a digital concierge service cost?</h3><p>We offer several flexible packages starting from just a few euros per month.</p></div>
+  <div class="faq-item"><h3>4. Is there a real person who handles digital tasks for me?</h3><p>Yes, Task Hunter provides human support, not just AI or automation.</p></div>
+  <div class="faq-item"><h3>5. I want a virtual assistant who is human. Is that possible?</h3><p>That’s exactly what we offer – a real person who communicates and works for you.</p></div>
+  <div class="faq-item"><h3>6. Who can do things for me, but online?</h3><p>Task Hunter handles tasks like research, emails, scheduling, and more.</p></div>
+  <div class="faq-item"><h3>7. What does a digital concierge do?</h3><p>Handles personal or office-related tasks that can be done online.</p></div>
+  <div class="faq-item"><h3>8. Is Task Hunter a chatbot?</h3><p>No – you get real, human support with a personalized touch.</p></div>
+  <div class="faq-item"><h3>9. What's the difference between a virtual assistant and Task Hunter?</h3><p>Task Hunter is a real digital concierge, not an automated software tool.</p></div>
+  <div class="faq-item"><h3>10. Can I delegate tasks via WhatsApp or email?</h3><p>Absolutely – we have fast channels to send any digital task.</p></div>
+  <div class="faq-item"><h3>11. Do I need to be a company to use this service?</h3><p>No – the service is specially designed for busy individuals.</p></div>
+  <div class="faq-item"><h3>12. Can I have the same digital concierge every month?</h3><p>Yes – we ensure continuity and a familiar working relationship.</p></div>
+  <div class="faq-item"><h3>13. Is Task Hunter available on weekends?</h3><p>Tasks can be submitted anytime – some are handled even during weekends.</p></div>
+  <div class="faq-item"><h3>14. Who can set up daily or weekly reminders for me?</h3><p>We set recurring reminders and ensure you receive them on time.</p></div>
+  <div class="faq-item"><h3>15. What does a personalized digital concierge mean?</h3><p>A dedicated person who learns your style and efficiently handles your frequent tasks.</p></div>
+  <div class="faq-item"><h3>16. Can I get support in English?</h3><p>Yes, we provide bilingual support (Romanian and English).</p></div>
+  <div class="faq-item"><h3>17. Can recurring tasks be handled automatically?</h3><p>Yes – we set up recurring tasks and handle them without further requests.</p></div>
+  <div class="faq-item"><h3>18. How fast will I get a response to a task?</h3><p>Usually within a few hours – depending on complexity and time of day.</p></div>
+  <div class="faq-item"><h3>19. Who can check my inbox daily?</h3><p>We can filter, sort, and reply based on your pre-set criteria.</p></div>
+  <div class="faq-item"><h3>20. Can I use the service for my relatives?</h3><p>Yes – with your approval, we can also handle tasks for your family members.</p></div>
+</details>
+
+
+<!-- 👩‍💻 Miscellaneous Tasks -->
+<details>
+  <summary>👩‍💻 Miscellaneous Tasks</summary>
+  <div class="faq-item"><h3>1. Who can help me send an important email?</h3><p>Task Hunter drafts and sends emails according to your instructions.</p></div>
+  <div class="faq-item"><h3>2. Can I pay someone to organize my schedule?</h3><p>Yes – we manage your calendar, appointments, and send you reminders.</p></div>
+  <div class="faq-item"><h3>3. I don't have time to plan. Is there a service for that?</h3><p>Send us the details – we handle planning and optimization.</p></div>
+  <div class="faq-item"><h3>4. I want to plan a vacation but don’t want to do the research.</h3><p>Task Hunter finds options, books them, and delivers a full itinerary.</p></div>
+  <div class="faq-item"><h3>5. Is there someone who can create my online shopping list?</h3><p>Tell us what you need and we’ll send a structured list or even place the order.</p></div>
+  <div class="faq-item"><h3>6. I need help planning a night out.</h3><p>We handle suggestions, reservations, and all the logistics.</p></div>
+  <div class="faq-item"><h3>7. How can I organize my day efficiently without the hassle?</h3><p>We deliver optimized daily or weekly schedules for you.</p></div>
+  <div class="faq-item"><h3>8. Can I delegate office administrative tasks?</h3><p>Yes – we draft, schedule, monitor, and report based on your needs.</p></div>
+  <div class="faq-item"><h3>9. Who can help me send automatic holiday greetings?</h3><p>We can schedule automated messages or manually send them for you.</p></div>
+  <div class="faq-item"><h3>10. Can I delegate online order tracking?</h3><p>We monitor your orders and send you timely updates.</p></div>
+  <div class="faq-item"><h3>11. Can I get weekly reports on completed tasks?</h3><p>Yes – we provide custom periodic reporting options.</p></div>
+  <div class="faq-item"><h3>12. Is there someone who can send emails on my behalf?</h3><p>With your consent, we write and send both professional and personal emails.</p></div>
+  <div class="faq-item"><h3>13. Can I get help filling out forms?</h3><p>Yes – we fill in online or PDF forms based on your information.</p></div>
+  <div class="faq-item"><h3>14. What if I forget to renew a subscription?</h3><p>We send reminders or renew it for you with your permission.</p></div>
+  <div class="faq-item"><h3>15. I want to organize an event. Can you help?</h3><p>We handle research, reservations, communication, and scheduling.</p></div>
+  <div class="faq-item"><h3>16. Can Task Hunter make restaurant reservations?</h3><p>Yes – we find options, make the booking, and send you confirmation.</p></div>
+  <div class="faq-item"><h3>17. Can I get reminders for monthly bills?</h3><p>We set up alerts and track due dates with you.</p></div>
+  <div class="faq-item"><h3>18. What if I make a mistake on a task?</h3><p>Send us the correction – we’ll revise or cancel it at no extra cost.</p></div>
+  <div class="faq-item"><h3>19. Can I request online research tasks?</h3><p>Yes – we search, summarize, and deliver the relevant information.</p></div>
+  <div class="faq-item"><h3>20. Can I get help with hobby-related tasks?</h3><p>Absolutely – we help you find courses, activities, or gear.</p></div>
+</details>
+
+<!-- 👩‍💻 Personal Assistance -->
+<details>
+  <summary>📞 Personal Assistance</summary>
+  <div class="faq-item"><h3>1. Can I outsource simple daily tasks?</h3><p>Yes – Task Hunter helps you save time by handling your repetitive tasks.</p></div>
+  <div class="faq-item"><h3>2. Who can help me send messages or set reminders?</h3><p>We can send messages for you and schedule personalized reminders.</p></div>
+  <div class="faq-item"><h3>3. Who can wake me up, snooze, or remind me of important things?</h3><p>We send alerts and automated messages to remind you of what matters, on time.</p></div>
+  <div class="faq-item"><h3>4. Is there someone who can handle things for me without phone calls?</h3><p>Absolutely – all communication is digital, with no phone calls needed.</p></div>
+  <div class="faq-item"><h3>5. What if I don’t even have time to search for something online?</h3><p>Send us a short request and we’ll search, compare, and provide the best option.</p></div>
+  <div class="faq-item"><h3>6. Can someone help me organize my digital life?</h3><p>Task Hunter structures your calendar, notes, and lists for better clarity.</p></div>
+  <div class="faq-item"><h3>7. Is there a service that tracks minor details for me?</h3><p>Yes – we manage all logistics so you can focus on what truly matters.</p></div>
+  <div class="faq-item"><h3>8. How can I stay organized without using dozens of apps?</h3><p>We centralize everything for you – into a single communication channel.</p></div>
+  <div class="faq-item"><h3>9. What kinds of tasks can I delegate to a digital concierge?</h3><p>Any digital task: messages, appointments, searches, reminders, lists, document organization.</p></div>
+  <div class="faq-item"><h3>10. Can someone remind me of what I need to do?</h3><p>Yes – send us your task list, and we’ll handle the notifications and follow-up.</p></div>
+  <div class="faq-item"><h3>11. What if I always forget to pay the bills?</h3><p>We send automated alerts on the dates we agree on together.</p></div>
+  <div class="faq-item"><h3>12. Can I have a personal digital agenda managed by someone else?</h3><p>Yes – we handle entry, updates, and notifications for you.</p></div>
+  <div class="faq-item"><h3>13. Can I get daily reminders for important tasks?</h3><p>Of course – via WhatsApp, email, or SMS, based on your preferences.</p></div>
+  <div class="faq-item"><h3>14. Can I request help with recurring tasks?</h3><p>Yes – we can automate or schedule them (e.g., every Monday at 9:00).</p></div>
+  <div class="faq-item"><h3>15. Can someone help me remember what’s urgent?</h3><p>We can flag urgent tasks and send special notifications for them.</p></div>
+  <div class="faq-item"><h3>16. How can I keep track of multiple tasks at once?</h3><p>We centralize and prioritize them, then send you a clear list.</p></div>
+  <div class="faq-item"><h3>17. Is this service suitable for older people?</h3><p>Yes – Task Hunter is easy to use, and communication is friendly and clear.</p></div>
+  <div class="faq-item"><h3>18. Can someone jot down my ideas when I’m busy?</h3><p>Send a voice or text message – we transcribe and save it for you.</p></div>
+  <div class="faq-item"><h3>19. Is there support for family organization?</h3><p>Absolutely – we can coordinate tasks related to kids, shopping, and family scheduling.</p></div>
+  <div class="faq-item"><h3>20. Can I get birthday or event reminders?</h3><p>Yes – we set recurring notifications for special events.</p></div>
+</details>
+
+<!-- 👩‍💻 Busy Professionals + 🌍 Miscellaneous -->
+<details>
+  <summary>💼 Busy Professionals + 🌍 Miscellaneous</summary>
+  <div class="faq-item"><h3>1. I'm too busy to look for accommodation. Can someone else do it?</h3><p>Yes – we search based on your preferences and deliver only the most relevant options.</p></div>
+  <div class="faq-item"><h3>2. How can I be more productive without hiring a secretary?</h3><p>Outsource repetitive digital tasks to a digital concierge like Task Hunter.</p></div>
+  <div class="faq-item"><h3>3. Is there a digital service for busy people?</h3><p>Yes – our service is designed specifically to save time for busy individuals.</p></div>
+  <div class="faq-item"><h3>4. How do busy people manage all their daily tasks?</h3><p>By digitally delegating them to specialized services like Task Hunter.</p></div>
+  <div class="faq-item"><h3>5. Who helps with small but important things?</h3><p>Task Hunter handles the little tasks that drain your time and energy.</p></div>
+  <div class="faq-item"><h3>6. Is there a service that does things for me?</h3><p>Yes – a digital concierge takes over and solves them efficiently.</p></div>
+  <div class="faq-item"><h3>7. I want to live more relaxed. What solutions exist?</h3><p>Delegating simple tasks to a digital service is a valuable first step.</p></div>
+  <div class="faq-item"><h3>8. I don’t want to deal with anything digital. Can someone else?</h3><p>Exactly – we manage all the digital aspects for you, stress-free.</p></div>
+  <div class="faq-item"><h3>9. Can I hire someone for online tasks without having a company?</h3><p>Yes – our service is tailored for individuals.</p></div>
+  <div class="faq-item"><h3>10. Who can organize my digital life?</h3><p>Task Hunter offers personalized digital planning, organization, and execution services.</p></div>
+  <div class="faq-item"><h3>11. What if I always forget the small tasks?</h3><p>We remind you, schedule them, and track progress on your behalf.</p></div>
+  <div class="faq-item"><h3>12. How can I reduce daily stress?</h3><p>By eliminating unnecessary tasks from your agenda and delegating them effectively.</p></div>
+  <div class="faq-item"><h3>13. Can I have a reliable digital partner?</h3><p>Yes – with a monthly subscription, you become a regular client and receive ongoing support.</p></div>
+  <div class="faq-item"><h3>14. How much time can I save monthly by outsourcing tasks?</h3><p>Between 10 and 30 hours per month, depending on complexity and frequency.</p></div>
+  <div class="faq-item"><h3>15. Is this a secure service?</h3><p>Yes – your data is confidential and protected under our policy.</p></div>
+  <div class="faq-item"><h3>16. Who uses these services the most?</h3><p>Busy professionals, freelancers, parents, and people who value their time.</p></div>
+  <div class="faq-item"><h3>17. Can I get help with spontaneous tasks?</h3><p>Yes – send your request and we’ll handle it as soon as we receive the details.</p></div>
+  <div class="faq-item"><h3>18. What if I urgently need digital help?</h3><p>Just send "urgent" in your message and we’ll respond as quickly as possible.</p></div>
+  <div class="faq-item"><h3>19. Is this service suitable for introverts?</h3><p>Perfect – all communication is written, with no unnecessary calls or meetings.</p></div>
+  <div class="faq-item"><h3>20. Can I combine personal and professional tasks?</h3><p>Absolutely – you send the list, and we adapt to your needs.</p></div>
+</details>
+
+  </div>
+  
+   <!-- ✅ Simple footer with useful links -->
+  <footer>
+    <a href="terms.html">Terms and Conditions</a> |
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
+
+  <!-- ✅ Script for mobile menu toggle -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
+	const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+  toggle.setAttribute("aria-expanded", !expanded);
+});
+  });
+  </script>
+</body>
+</html>

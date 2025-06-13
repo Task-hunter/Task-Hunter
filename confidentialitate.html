@@ -1,15 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Politica de confidențialitate – Task Hunter</title>
-<meta name="description" content="Vezi cum sunt colectate și protejate datele tale. Confidențialitatea este prioritatea noastră.">
-<meta property="og:title" content="Politica de confidențialitate – Task Hunter">
-<meta property="og:description" content="Datele tale sunt în siguranță. Află mai multe aici.">
-<meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+  
+    <!-- Favicon standard pentru browsere mai vechi -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Favicon pentru browsere moderne -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Favicon pentru iOS și aplicații web progressive -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Task Hunter">
+
+  <!-- Titlu și meta descriere SEO + Social Media -->
+  <title>Politica de confidențialitate – Task Hunter</title>
+  <meta name="description" content="Vezi cum sunt colectate și protejate datele tale. Confidențialitatea este prioritatea noastră.">
+  <meta name="geo.region" content="RO">
+  <meta name="geo.placename" content="România">
+  <meta name="language" content="ro">
+  <meta name="country" content="RO">
+  <meta property="og:title" content="Politica de confidențialitate – Task Hunter">
+  <meta property="og:description" content="Datele tale sunt în siguranță. Află mai multe aici.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Task-hunter/Task-Hunter/main/preview.png">
+
+  <!-- Titlu și meta descriere SEO + Social Media -->
   <style>
   @font-face {
       font-family: 'Poppins';
@@ -43,7 +61,12 @@
       top: 0;
       z-index: 1000;
     }
-
+	.page-header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+	}
     .logo {
       font-weight: 600;
       font-size: 20px;
@@ -123,20 +146,38 @@
       line-height: 1.6;
       margin-bottom: 15px;
     }
+	.language-switch {
+	  margin-left: auto;
+	  margin-right: 10px;
+	}
+
+	.language-switch img {
+	  display: inline-block;
+	  height: 20px;
+	  border-radius: 2px;
+	}
+
   </style>
 </head>
 <body>
 
+  <!-- ✅ Navbar principal cu logo, meniu și schimbare limbă -->
   <header class="navbar">
     <div class="logo">Task Hunter</div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html">Acasă</a>
-      <a href="servicii.html">Servicii</a>
-      <a href="preturi.html">Prețuri</a>
-      <a href="despre.html">Despre mine</a>
-      <a href="contact.html">Contact</a>
-      <a href="faq.html">FAQ</a>
+  <div class="language-switch">
+    <a href="privacy.html" title="View in English">
+      <img src="gb.png" alt="English" style="height: 20px; vertical-align: middle;">
+    </a>
+  </div>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="index.html">Acasă</a>
+        <a href="servicii.html">Servicii</a>
+        <a href="preturi.html">Prețuri</a>
+        <a href="despre.html">Despre mine</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+		<a href="faqsearch.html">Căutări frecvente</a>
     </nav>
   </header>
 
@@ -165,11 +206,16 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("menu-toggle").addEventListener("click", function () {
-        document.getElementById("nav-links").classList.toggle("show");
-      });
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
+  const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+  toggle.setAttribute("aria-expanded", !expanded);
+});
+});
   </script>
 <footer style="background-color: #1f1f1f; color: white; text-align: center; padding: 20px; font-size: 14px;">
   <a href="termeni.html" style="color: #00bfff; text-decoration: none; margin: 0 10px;">Termeni și Condiții</a>
